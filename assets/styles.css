@@ -281,6 +281,8 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .video-section {
@@ -425,10 +427,17 @@ footer {
   padding-left: 18px;
   list-style: disc;
   list-style-position: outside;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .paper-list li + li {
   margin-top: 8px;
+}
+
+.paper-list a {
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .person-name {
