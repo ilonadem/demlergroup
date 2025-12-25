@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <!-- Empty on purpose -->
+    </main>
+
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+
+    <script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(html => {
+        const headerContainer = document.getElementById("site-header");
+        headerContainer.innerHTML = html;
+
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        const links = headerContainer.querySelectorAll("a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            }
+        });
+        });
+    </script>
+  </body>
+</html>

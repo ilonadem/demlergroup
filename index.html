@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="collage">
+        <img src="assets/images/homepage/image5.png" alt="" />
+        <img src="assets/images/homepage/image6.png" alt="" />
+        <div class="collage-text">
+          <h1>Welcome to the Demler Group webpage!</h1>
+          <p>
+            Our research focuses on Theoretical Condensed Matter Physics broadly defined. 
+            Examples of research subjects we are exploring include: high-temperature superconductivity, 
+            photocontrol of correlated states, non-linear spectroscopy, quantum enhanced sensing with local probes (e.g. NV centers in diamond), 
+            electron-photon interactions, Bose and Fermi polarons in electron systems and ultracold atoms, equilibrium and dynamical properties of magnons in YIG, 
+            systems with strong light-matter coupling, hyperbolic polaritons, quantum simulations with ultracold atoms and Rydberg arrays, using machine learning to analyze data from quantum simulators, and real-world applications of NISQ devices.
+          </p>
+          <!-- <div class="collage-columns">
+            <ul>
+              <li>high-temperature superconductivity</li>
+              <li>photocontrol of correlated states</li>
+              <li>non-linear spectroscopy</li>
+              <li>quantum enhanced sensing with local probes (e.g. NV centers in diamond)</li>
+            </ul>
+            <ul>
+              <li>electron-photon interactions</li>
+              <li>Bose and Fermi polarons in electron systems and ultracold atoms</li>
+              <li>equilibrium and dynamical properties of magnons in YIG</li>
+              <li>systems with strong light-matter coupling</li>
+            </ul>
+            <ul>
+              <li>hyperbolic polaritons</li>
+              <li>quantum simulations with ultracold atoms and Rydberg arrays</li>
+              <li>using machine learning to analyze data from quantum simulators</li>
+              <li>real-world applications of NISQ devices</li>
+            </ul>
+          </div> -->
+        </div>
+        <img src="assets/images/homepage/image7.png" alt="" />
+        <img src="assets/images/homepage/image5.png" alt="" />
+      </section>
+
+    </main>
+
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+
+    <script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(html => {
+        const headerContainer = document.getElementById("site-header");
+        headerContainer.innerHTML = html;
+
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        const links = headerContainer.querySelectorAll("a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            }
+        });
+        });
+    </script>
+  </body>
+</html>

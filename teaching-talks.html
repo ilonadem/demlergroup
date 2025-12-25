@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Teaching &amp; Talks</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="people-section">
+        <h1>Current Teaching, ETH Zurich</h1>
+        <ul class="paper-list">
+          <li>Physics 402-0871-00. Solid State Theory</li>
+          <li>Physics 402-0861-00. Statistical Physics</li>
+          <li>Physics 402-0414-00. Selected topics in quantum many-body physics (co-taught with A. Imamoglu)</li>
+          <li>Pro-seminar FS24. Theory of many-body quantum systems (co-taught with A. Imamoglu)</li>
+          <li>Physics 402-0490-00. Advanced Methods in Quantum Many-Body Theory</li>
+          <li>Physics 402-0865-70. Strongly correlated systems in atomic and condensed matter physics</li>
+          <li>Physics 402-2214-10. Theory of Heat</li>
+        </ul>
+      </section>
+
+      <section class="people-section">
+        <h1>Past Teaching, Harvard</h1>
+        <ul class="paper-list">
+          <li>Physics 143a. Quantum mechanics</li>
+          <li>Physics 144. Symmetries and geometry in quantum mechanics</li>
+          <li>Physics 167. Condensed matter physics of modern technologies</li>
+          <li>Physics 181. Statistical mechanics and thermodynamics</li>
+          <li>Physics 262. Statistical Physics</li>
+          <li>Physics 268r. Physics of strongly correlated electron systems</li>
+          <li>Physics 284. Strongly correlated systems in atomic and condensed matter physics</li>
+          <li>Applied Physics 295a. Quantum theory of solids I</li>
+          <li>Applied Physics 295b. Quantum theory of solids II</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+
+    <script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(html => {
+        const headerContainer = document.getElementById("site-header");
+        headerContainer.innerHTML = html;
+
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        const links = headerContainer.querySelectorAll("a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            }
+        });
+        });
+    </script>
+  </body>
+</html>

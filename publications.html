@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publications</title>
+
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <div id="site-header"></div>
+
+    <main>
+      <section class="publications-section">
+        <h1>Publications</h1>
+
+        <p class="publications-note">
+          For a complete and up-to-date list, see the
+          <a href="https://scholar.google.com/citations?user=0qjME1gAAAAJ" target="_blank">
+            Google Scholar
+          </a>.
+        </p>
+
+        <!-- Legacy publication list gets injected here -->
+        <div id="publications-list"></div>
+      </section>
+    </main>
+
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+
+    <script>
+      fetch("header.html")
+        .then(r => r.text())
+        .then(html => {
+          const h = document.getElementById("site-header");
+          h.innerHTML = html;
+          const page = window.location.pathname.split("/").pop() || "index.html";
+          h.querySelectorAll("a").forEach(a => {
+            if (a.getAttribute("href") === page) a.classList.add("active");
+          });
+        });
+
+      fetch("publications-legacy.html")
+        .then(r => r.text())
+        .then(html => {
+          const temp = document.createElement("div");
+          temp.innerHTML = html;
+          const pieces = Array.from(temp.querySelectorAll("li, hr"));
+          const target = document.getElementById("publications-list");
+          target.innerHTML = "";
+          pieces.reverse().forEach(node => {
+            target.appendChild(node.cloneNode(true));
+          });
+        });
+    </script>
+  </body>
+</html>

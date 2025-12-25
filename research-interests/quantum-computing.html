@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quantum Computing</title>
+    <base href="../">
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <section class="people-section">
+        <h1>Quantum Computing</h1>
+
+        <div class="research-detail">
+          <h2>Quantum enhanced NMR inference</h2>
+          <div class="image-row">
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+          </div>
+          <h3>Selected Publications:</h3>
+          <ul class="paper-list">
+            <li>D. Sels, H. Dashti, S. Mora, O. Demler, E. Demler, <em>Quantum approximate Bayesian computation for NMR model inference</em>, Nat. Mach. Intell. 2:396 (2020). <a href="https://doi.org/10.1038/s42256-020-0198-x" target="_blank" rel="noopener">https://doi.org/10.1038/s42256-020-0198-x</a></li>
+            <li>D. Sels, E. Demler, <em>Quantum generative model for sampling many-body spectral functions</em>, Phys. Rev. B 103:014301 (2021). <a href="https://doi.org/10.1103/PhysRevB.103.014301" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevB.103.014301</a></li>
+            <li>K. Seetharam et al., <em>Digital quantum simulation of NMR experiments</em>, Sci. Adv. 9:eadh2594 (2023). <a href="https://doi.org/10.1126/sciadv.adh2594" target="_blank" rel="noopener">https://doi.org/10.1126/sciadv.adh2594</a></li>
+          </ul>
+        </div>
+
+        <div class="research-detail">
+          <h2>Hybrid algorithms</h2>
+          <div class="image-row">
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+          </div>
+          <h3>Selected Publications:</h3>
+          <ul class="paper-list">
+            <li>M. Denner, A. Miessen, H. Yan, I. Tavernelli, T. Neupert, E. Demler, Y. Wang, <em>A Hybrid Quantum-Classical Method for Electron-Phonon Systems</em>, Commun. Phys. 6:233 (2023). <a href="https://doi.org/10.1038/s42005-023-01353-3" target="_blank" rel="noopener">https://doi.org/10.1038/s42005-023-01353-3</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+    <script>
+      fetch("../header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
+          const currentPage = window.location.pathname.split("/").pop() || "index.html";
+          const links = headerContainer.querySelectorAll("a");
+          links.forEach((link) => {
+            if (link.getAttribute("href") === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

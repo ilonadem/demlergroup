@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="research-section">
+        <h1>Demler group research interests</h1>
+        <p class="research-intro">
+          Our research interests are constantly evolving. Here are a few examples of research directions that we are currently pursuing.
+        </p>
+        <div class="research-grid">
+          <a class="research-card" href="research-interests/nonequilibrium-dynamics.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Nonequilibrium dynamics of quantum many-body systems</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/strongly-correlated-states.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Strongly correlated many-body states in electron systems and ultracold atoms</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/quantum-magnetism.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Quantum magnetism</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/light-matter-hybrids.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Light-matter hybrids</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/novel-spectroscopies.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Novel spectroscopies of electron systems</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/polarons.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Polarons</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/quantum-simulations.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Quantum simulations</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/quantum-computing.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Quantum Computing</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/variational-approach.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Variational approach to quantum many-body systems</h3>
+            
+          </a>
+
+          <a class="research-card" href="research-interests/open-many-body-dynamics.html">
+            <div class="research-thumb">Image here</div>
+            <h3>Dynamics of open many-body systems</h3>
+            
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+
+    <script>
+    fetch("header.html")
+        .then(response => response.text())
+        .then(html => {
+        const headerContainer = document.getElementById("site-header");
+        headerContainer.innerHTML = html;
+
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        const links = headerContainer.querySelectorAll("a");
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+            }
+        });
+        });
+    </script>
+  </body>
+</html>

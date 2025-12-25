@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Variational approach to quantum many-body systems</title>
+    <base href="../">
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <section class="people-section">
+        <h1>Variational approach to quantum many-body systems</h1>
+
+        <div class="research-detail">
+          <h2>Variational methods for correlated systems</h2>
+          <div class="image-row">
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+            <div class="research-figure">Image</div>
+          </div>
+          <h3>Selected Publications:</h3>
+          <ul class="paper-list">
+            <li>T. Shi, E. Demler, I. Cirac, <em>Variational Study of Fermionic and Bosonic Systems with Non-Gaussian States</em>, Ann. Phys. 390:245 (2018).</li>
+            <li>Y. Ashida, T. Shi, M. C. Banuls, I. Cirac, E. Demler, <em>Solving quantum impurity problems ...</em>, Phys. Rev. Lett. 121:026805 (2018).</li>
+            <li>P. Sala, T. Shi, S. Kuhn, M. C. Banuls, E. Demler, J. I. Cirac, <em>Variational study of U(1) and SU(2) lattice gauge theories</em>, Phys. Rev. D 98:034505 (2018).</li>
+            <li>T. Shi, J. I. Cirac, E. Demler, <em>Ultrafast molecular dynamics in terahertz-STM experiments</em>, Phys. Rev. Research 2:033379 (2020). <a href="https://doi.org/10.1103/PhysRevResearch.2.033379" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevResearch.2.033379</a></li>
+            <li>Y. Ashida, T. Shi, R. Schmidt, H. R. Sadeghpour, J. I. Cirac, E. Demler, <em>Quantum Rydberg Central Spin Model</em>, Phys. Rev. Lett. 123:183001 (2019). <a href="https://doi.org/10.1103/PhysRevLett.123.183001" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevLett.123.183001</a></li>
+            <li>T. Guaita, L. Hackl, T. Shi, C. Hubig, E. Demler, J. I. Cirac, <em>Gaussian time dependent variational principle for the Bose-Hubbard model</em>, Phys. Rev. B 100:094529 (2019). <a href="https://doi.org/10.1103/PhysRevB.100.094529" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevB.100.094529</a></li>
+            <li>T. Shi, E. Demler, J. I. Cirac, <em>A variational approach for many-body systems at finite temperature</em>, Phys. Rev. Lett. 125:180602 (2020). <a href="https://doi.org/10.1103/PhysRevLett.125.180602" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevLett.125.180602</a></li>
+            <li>Y. Wang, I. Esterlis, T. Shi, J. I. Cirac, E. Demler, <em>Zero-Temperature Phases of the 2D Hubbard-Holstein Model</em>, Phys. Rev. Research 2:043258 (2020). <a href="https://doi.org/10.1103/PhysRevResearch.2.043258" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevResearch.2.043258</a></li>
+            <li>L. Hackl, T. Guaita, T. Shi, J. Haegeman, E. Demler, I. Cirac, <em>Geometry of variational methods: dynamics of closed quantum systems</em>, SciPost Phys 9:048 (2020). <a href="https://doi.org/10.21468/SciPostPhys.9.4.048" target="_blank" rel="noopener">https://doi.org/10.21468/SciPostPhys.9.4.048</a></li>
+            <li>T. Guaita, L. Hackl, T. Shi, E. Demler, J. I. Cirac, <em>Generalization of group-theoretic coherent states for variational calculations</em>, Phys. Rev. Research 3:023090 (2021). <a href="https://doi.org/10.1103/PhysRevResearch.3.023090" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevResearch.3.023090</a></li>
+            <li>P. Schindler, T. Guaita, T. Shi, E. Demler, J. I. Cirac, <em>A Variational Ansatz for the Ground State of the Quantum Sherrington-Kirkpatrick Model</em>, Phys. Rev. Lett. 129:220401 (2022). <a href="https://doi.org/10.1103/PhysRevLett.129.220401" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevLett.129.220401</a></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <footer>© 2025 Demler group; designed by I. Demler</footer>
+    <script>
+      fetch("../header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
+          const currentPage = window.location.pathname.split("/").pop() || "index.html";
+          const links = headerContainer.querySelectorAll("a");
+          links.forEach((link) => {
+            if (link.getAttribute("href") === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>
