@@ -410,6 +410,31 @@ footer {
   word-break: break-word;
 }
 
+/* Group varia */
+.varia-figure {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.varia-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background: #f7f9fc;
+  box-shadow: 0 0 0 1px #d4deef;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.varia-caption {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #425776;
+}
+
 .video-card h3 {
   margin: 0;
   font-size: 18px;
