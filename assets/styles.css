@@ -767,3 +767,33 @@ footer {
 #publications-list a:hover {
   text-decoration: underline;
 }
+
+/* Tighten CV layout */
+#cv-container p {
+  margin: 0.25rem 0;
+}
+
+#cv-container h1 {
+  margin-bottom: 0.75rem;
+}
+
+#cv-container h2 {
+  margin: 1.2rem 0 0.4rem;
+}
+
+#cv-container h3 {
+  margin: 0.8rem 0 0.3rem;
+}
+
+#cv-container ul {
+  margin: 0.25rem 0 0.5rem 1.2rem;
+  padding: 0;
+}
+
+#cv-container li {
+  margin: 0.15rem 0;
+}
+
+#cv-container hr {
+  margin: 1rem 0;
+}

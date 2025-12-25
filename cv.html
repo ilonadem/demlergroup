@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eugene Demler — CV</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="people-section" id="cv-container">
+        <h1>Eugene Demler — Curriculum Vitae</h1>
+        <div id="cv-content">Loading CV…</div>
+      </section>
+    </main>
+
+    <footer>© 2025 Demler group; original design by I. Demler</footer>
+
+    <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(html => {
+        const headerContainer = document.getElementById("site-header");
+        headerContainer.innerHTML = html;
+
+        const currentPage = window.location.pathname.split("/").pop() || "index.html";
+        const links = headerContainer.querySelectorAll("a");
+
+        links.forEach(link => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+          }
+        });
+      });
+
+    // Minimal Markdown-to-HTML converter to render cv.md without external deps
+    const inlineFormat = text => {
+      return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.+?)\*/g, "<em>$1</em>")
+        .replace(/ {2,}$/g, "<br />");
+    };
+
+    const markdownToHtml = md => {
+      const lines = md.split(/\r?\n/);
+      const htmlParts = [];
+      let inList = false;
+      let paragraph = [];
+
+      const closeList = () => {
+        if (inList) {
+          htmlParts.push("</ul>");
+          inList = false;
+        }
+      };
+
+      const flushParagraph = () => {
+        if (paragraph.length) {
+          htmlParts.push(`<div class="cv-block">${paragraph.join("<br />")}</div>`);
+          paragraph = [];
+        }
+      };
+
+      lines.forEach(rawLine => {
+        const line = rawLine;
+        const trimmed = line.trim();
+
+        if (/^---+$/.test(trimmed)) {
+          closeList();
+          flushParagraph();
+          htmlParts.push("<hr />");
+          return;
+        }
+
+        const headingMatch = line.match(/^(#{1,6})\s+(.*)$/);
+        if (headingMatch) {
+          closeList();
+          flushParagraph();
+          const level = headingMatch[1].length;
+          htmlParts.push(`<h${level}>${inlineFormat(headingMatch[2])}</h${level}>`);
+          return;
+        }
+
+        const listMatch = line.match(/^\s*-\s+(.*)$/);
+        if (listMatch) {
+          flushParagraph();
+          if (!inList) {
+            htmlParts.push("<ul>");
+            inList = true;
+          }
+          htmlParts.push(`<li>${inlineFormat(listMatch[1])}</li>`);
+          return;
+        }
+
+        if (trimmed === "") {
+          closeList();
+          flushParagraph();
+          return;
+        }
+
+        closeList();
+        paragraph.push(inlineFormat(line));
+      });
+
+      closeList();
+      flushParagraph();
+      return htmlParts.join("\n");
+    };
+
+    fetch("cv.md")
+      .then(response => response.text())
+      .then(md => {
+        const container = document.getElementById("cv-content");
+        container.innerHTML = markdownToHtml(md);
+      })
+      .catch(() => {
+        const container = document.getElementById("cv-content");
+        container.textContent = "Unable to load CV right now. Please try again later.";
+      });
+    </script>
+  </body>
+</html>
