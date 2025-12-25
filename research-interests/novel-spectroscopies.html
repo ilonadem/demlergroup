@@ -60,7 +60,7 @@
           const currentPage = window.location.pathname.split("/").pop() || "index.html";
           const links = headerContainer.querySelectorAll("a");
           links.forEach((link) => {
-            if (link.getAttribute("href") === currentPage) {
+            if (link.pathname.split("/").pop() === currentPage) {
               link.classList.add("active");
             }
           });
