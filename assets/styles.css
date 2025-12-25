@@ -20,7 +20,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 220px;
+  width: 260px;
   height: 100vh;
   background: #f7f9fc;
   border-right: 1px solid #d4deef;
@@ -117,7 +117,7 @@ main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 16px;
-  margin-left: 240px; /* space for sidebar */
+  margin-left: 280px; /* space for sidebar */
 }
 
 /* Footer (optional later) */
@@ -126,7 +126,7 @@ footer {
   padding: 20px 16px;
   font-size: 0.9rem;
   text-align: center;
-  margin-left: 240px;
+  margin-left: 280px;
   color: #666;
 }
 
@@ -293,6 +293,121 @@ footer {
   margin: 0 0 12px 0;
   font-size: 20px;
   color: #0f1b2b;
+}
+
+.notes-accordion {
+  border: 1px solid #d4deef;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #f7f9fc;
+}
+
+.notes-accordion summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 24px;
+  color: #0f1b2b;
+  list-style: none;
+  position: relative;
+  padding-left: 28px;
+}
+
+.notes-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.notes-accordion summary::after {
+  content: "▼";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 22px;
+  transition: transform 0.2s ease;
+}
+
+.notes-accordion[open] {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.notes-accordion[open] summary {
+  margin-bottom: 10px;
+}
+
+.notes-accordion[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.notes-hero {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 16px 0;
+}
+
+.notes-hero-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.notes-hero img {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+.notes-hero-caption {
+  font-size: 15px;
+  color: #1f4f87;
+  font-weight: 600;
+}
+
+.notes-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 10px 0 16px 0;
+}
+
+.notes-preview-card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #d4deef;
+  border-radius: 10px;
+  background: #f7f9fc;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.notes-preview-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+}
+
+.notes-preview-placeholder {
+  width: 100%;
+  height: 240px;
+  display: grid;
+  place-items: center;
+  background: #e3e9f3;
+  color: #425776;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px dashed #d4deef;
+}
+
+.notes-preview-card span {
+  font-size: 14px;
+  color: #0f1b2b;
+  text-align: center;
+  word-break: break-word;
 }
 
 .video-card h3 {
