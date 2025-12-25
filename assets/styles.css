@@ -768,32 +768,59 @@ footer {
   text-decoration: underline;
 }
 
-/* Tighten CV layout */
-#cv-container p {
-  margin: 0.25rem 0;
+/* CV-specific styles */
+#cv-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
-#cv-container h1 {
-  margin-bottom: 0.75rem;
+#cv-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
 }
 
-#cv-container h2 {
-  margin: 1.2rem 0 0.4rem;
+#cv-content h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3rem;
 }
 
-#cv-container h3 {
-  margin: 0.8rem 0 0.3rem;
+#cv-content hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 1.5rem 0;
 }
 
-#cv-container ul {
-  margin: 0.25rem 0 0.5rem 1.2rem;
-  padding: 0;
+#cv-content .cv-block {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
 }
 
-#cv-container li {
-  margin: 0.15rem 0;
+#cv-content ul {
+  margin: 0.5rem 0 1.5rem 0;
+  padding-left: 1.5rem;
 }
 
-#cv-container hr {
-  margin: 1rem 0;
+#cv-content li {
+  margin-bottom: 0.4rem;
+  line-height: 1.6;
+}
+
+#cv-content strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+#cv-content a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+#cv-content a:hover {
+  text-decoration: underline;
 }
