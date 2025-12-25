@@ -100,7 +100,8 @@ body {
   font-weight: 700;
   font-size: 28px;
   padding: 6px 10px;
-  transition: color 0.15s ease;
+  border-radius: 10px;
+  transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .site-header a:hover {
@@ -110,6 +111,9 @@ body {
 .site-header a.active {
   color: #0d3f6d;               /* blue active */
   font-weight: 700;
+  background: #e5edfa;
+  /* border: 1px solid #1f4f87; */
+  box-shadow: 0 4px 10px rgba(17, 56, 112, 0.12);
 }
 
 /* Main content area */

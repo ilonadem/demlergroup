@@ -159,20 +159,23 @@
     <footer>© 2025 Demler group; original design by I. Demler</footer>
 
     <script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(html => {
-        const headerContainer = document.getElementById("site-header");
-        headerContainer.innerHTML = html;
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
 
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-        const links = headerContainer.querySelectorAll("a");
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+          const links = headerContainer.querySelectorAll("a");
 
-        links.forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
+          links.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
+              link.classList.add("active");
             }
-        });
+          });
         });
     </script>
   </body>

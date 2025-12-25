@@ -16,7 +16,7 @@
     <main>
       <section class="collage">
         <div class="collage-text">
-          <h1>Welcome to the Demler Group webpage!</h1>
+          <h1>Welcome to the Demler Group webpage</h1>
           <p>
             We work at the <a href="https://itp.phys.ethz.ch/">Institute for Theoretical Physics</a> at ETH Zurich.
             Our research focuses on Theoretical Condensed Matter Physics broadly defined.
@@ -42,20 +42,23 @@
     <footer>© 2025 Demler group; original design by I. Demler</footer>
 
     <script>
-    fetch("header.html")
-        .then(response => response.text())
-        .then(html => {
-        const headerContainer = document.getElementById("site-header");
-        headerContainer.innerHTML = html;
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
 
-        const currentPage = window.location.pathname.split("/").pop() || "index.html";
-        const links = headerContainer.querySelectorAll("a");
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+          const links = headerContainer.querySelectorAll("a");
 
-        links.forEach(link => {
-            if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
+          links.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
+              link.classList.add("active");
             }
-        });
+          });
         });
     </script>
   </body>

@@ -31,13 +31,19 @@
 
     <script>
       fetch("header.html")
-        .then(r => r.text())
-        .then(html => {
+        .then((r) => r.text())
+        .then((html) => {
           const h = document.getElementById("site-header");
           h.innerHTML = html;
-          const page = window.location.pathname.split("/").pop() || "index.html";
-          h.querySelectorAll("a").forEach(a => {
-            if (a.getAttribute("href") === page) a.classList.add("active");
+
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+          h.querySelectorAll("a").forEach((a) => {
+            const href = a.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
+              a.classList.add("active");
+            }
           });
         });
 

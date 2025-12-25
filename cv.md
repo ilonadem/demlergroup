@@ -4,7 +4,9 @@
 Institute for Theoretical Physics, ETH Zurich
 
 Wolfgang-Pauli-Str. 27 · 8093 Zurich · Switzerland  
-Email: [demlere@phys.ethz.ch](mailto:demlere@phys.ethz.ch)
+Email: demlere at phys dot ethz dot ch
+
+[Download PDF CV](assets/eugene-cv/short%20cv_2025.pdf)
 
 ---
 

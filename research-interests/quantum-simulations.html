@@ -69,13 +69,27 @@
         .then((html) => {
           const headerContainer = document.getElementById("site-header");
           headerContainer.innerHTML = html;
-          const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
           const links = headerContainer.querySelectorAll("a");
+          let matched = false;
+
           links.forEach((link) => {
-            if (link.pathname.split("/").pop() === currentPage) {
+            const href = link.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
               link.classList.add("active");
+              matched = true;
             }
           });
+
+          if (!matched && currentPath.includes("/research-interests")) {
+            const researchLink = headerContainer.querySelector('a[href$="research.html"]');
+            if (researchLink) {
+              researchLink.classList.add("active");
+            }
+          }
         });
     </script>
   </body>
