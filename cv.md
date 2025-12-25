@@ -87,7 +87,7 @@ M.S. in Theoretical Physics, 1993
 
 ---
 
-## Distinguished Lectures and Lecture Series
+## Distinguished Lectures
 
 - CORI 2024 Project Lecture Series, University of Palermo, Italy (2025)
 - Arnold Sommerfeld Lecture Series, LMU Munich, Germany (2024)
