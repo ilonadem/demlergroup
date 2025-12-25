@@ -18,10 +18,6 @@ Institute for Theoretical Physics, ETH Zurich, Switzerland
 
 ## Research Experience and Appointments
 
-**ETH Zurich**, Switzerland  
-Professor of Theoretical Condensed Matter Physics  
-2021 – present  
-
 **Harvard University**, Cambridge, Massachusetts, USA  
 Professor of Physics  
 2005 – 2021  
