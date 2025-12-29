@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Group News</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header gets injected here -->
+    <div id="site-header"></div>
+
+    <main>
+      <section class="news-section">
+        <h1>Group News</h1>
+
+        <div class="news-list">
+          <article class="news-card">
+            <p class="news-date">December 2025</p>
+            <h2>Ivan Morera receives the Ramon Margalef Award</h2>
+            <p class="news-body">
+              Ivan was honored by the University of Barcelona for discovering "kinetic magnetism" in his doctoral work. The award recognizes exceptional research and knowledge transfer achievements.
+            </p>
+            <a class="news-link" href="https://www.fbg.ub.edu/en/news/the-university-of-barcelona-recognizes-excellence-in-research-and-knowledge-transfer-at-the-social-council-and-bosch-i-gimpera-foundation-awards/" target="_blank" rel="noopener noreferrer">
+              Read the announcement
+            </a>
+          </article>
+
+          <article class="news-card">
+            <p class="news-date">November 2025</p>
+            <h2>Friederike Bartels receives the NCCR Spin INSPIRE Potentials Fellowship</h2>
+            <p class="news-body">
+              Friederike was awarded an INSPIRE Potentials Fellowship by NCCR Spin, recognizing her contributions and potential in quantum spin research.
+            </p>
+            <a class="news-link" href="https://www.nccr-spin.ch/inspire-potentials-fellows" target="_blank" rel="noopener noreferrer">
+              View the fellowship fellows
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Demler group; original design by I. Demler</footer>
+
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
+
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+          const links = headerContainer.querySelectorAll("a");
+
+          links.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

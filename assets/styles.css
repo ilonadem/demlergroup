@@ -828,3 +828,72 @@ footer {
 #cv-content a:hover {
   text-decoration: underline;
 }
+
+/* Group News page */
+.news-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.news-section h1 {
+  margin: 0 0 12px 0;
+  font-size: 32px;
+  color: #0f1b2b;
+}
+
+.news-intro {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  color: #1f2d3f;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 16px;
+}
+
+.news-card {
+  background: #f7f9fc;
+  border: 1px solid #d4deef;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(17, 56, 112, 0.06);
+}
+
+.news-date {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f4f87;
+  letter-spacing: 0.02em;
+}
+
+.news-card h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #0f1b2b;
+}
+
+.news-body {
+  margin: 0;
+  font-size: 17px;
+  color: #1f2d3f;
+  line-height: 1.6;
+}
+
+.news-link {
+  margin-top: 4px;
+  align-self: flex-start;
+  font-weight: 700;
+  color: #1f4f87;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.news-link:hover {
+  border-bottom-color: #1f4f87;
+}
