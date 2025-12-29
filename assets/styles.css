@@ -10,7 +10,7 @@
 body {
   margin: 0;
   font-family: "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 23px;
+  font-size: 18.5px;
   line-height: 1.7;
   color: #0f1b2b;
 }
@@ -36,8 +36,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 16px;
-  font-size: 20px;
+  padding: 12px 14px;
+  font-size: 16px;
   font-weight: 700;
   color: #0f1b2b;
   background: #f7f9fc;
@@ -98,7 +98,7 @@ body {
   text-decoration: none;
   color: #0f1b2b;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 22px;
   padding: 6px 10px;
   border-radius: 10px;
   transition: color 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
@@ -142,14 +142,14 @@ footer {
 
 .people-section h1 {
   margin: 0 0 16px 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 700;
   color: #0f1b2b;
 }
 
 .people-section h2 {
   margin: 0 0 16px 0;
-  font-size: 24px;
+  font-size: 19px;
   font-weight: 700;
   color: #0f1b2b;
 }
@@ -160,7 +160,7 @@ footer {
 
 .people-section .subsection h3 {
   margin: 0 0 12px 0;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   color: #0f1b2b;
 }
@@ -207,8 +207,8 @@ footer {
 }
 
 .person-photo {
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 4px;
   background: #e3e9f3;
@@ -295,7 +295,7 @@ footer {
 
 .video-section h2 {
   margin: 0 0 12px 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #0f1b2b;
 }
 
@@ -309,7 +309,7 @@ footer {
 .notes-accordion summary {
   cursor: pointer;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   color: #0f1b2b;
   list-style: none;
   position: relative;
@@ -363,16 +363,24 @@ footer {
 }
 
 .notes-hero-caption {
-  font-size: 15px;
+  font-size: 12px;
   color: #1f4f87;
   font-weight: 600;
 }
 
 .notes-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 10px;
-  margin: 10px 0 16px 0;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 10px auto 16px auto;
+}
+
+.notes-preview img {
+  width: 70%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
 }
 
 .notes-preview-card {
@@ -401,14 +409,14 @@ footer {
   place-items: center;
   background: #e3e9f3;
   color: #425776;
-  font-size: 13px;
+  font-size: 11px;
   text-align: center;
   border-radius: 8px;
   border: 1px dashed #d4deef;
 }
 
 .notes-preview-card span {
-  font-size: 14px;
+  font-size: 12px;
   color: #0f1b2b;
   text-align: center;
   word-break: break-word;
@@ -416,13 +424,13 @@ footer {
 
 .video-card h3 {
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
   color: #0f1b2b;
 }
 
 .video-meta {
   margin: 0;
-  font-size: 15px;
+  font-size: 12px;
   color: #425776;
 }
 
@@ -453,13 +461,13 @@ footer {
 
 .research-section h1 {
   margin: 0 0 20px 0;
-  font-size: 36px;
+  font-size: 29px;
   color: #0f1b2b;
 }
 
 .research-intro {
   margin: 0 0 20px 0;
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.6;
   color: #1f2d3f;
 }
@@ -494,13 +502,13 @@ footer {
 
 .research-card h3 {
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #0f1b2b;
 }
 
 .research-card p {
   margin: 0;
-  font-size: 16px;
+  font-size: 13px;
   color: #1f2d3f;
   line-height: 1.5;
 }
@@ -514,12 +522,12 @@ footer {
 
 .research-detail h2 {
   margin: 0 0 12px 0;
-  font-size: 28px;
+  font-size: 22px;
   color: #0f1b2b;
 }
 .research-detail h3 {
   margin: 0 0 12px 0;
-  font-size: 22px;
+  font-size: 18px;
   color: #0f1b2b;
 }
 
@@ -537,7 +545,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 11px;
   color: #425776;
 }
 
@@ -548,6 +556,7 @@ footer {
   list-style-position: outside;
   word-break: break-word;
   overflow-wrap: anywhere;
+  font-size: 18px;
 }
 
 .paper-list li + li {
@@ -561,12 +570,12 @@ footer {
 
 .person-name {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
   color: #0f1b2b;
 }
 
 .person-role {
-  font-size: 14px;
+  font-size: 12px;
   color: #425776;
 }
 
@@ -597,12 +606,12 @@ footer {
   object-fit: contain;
   justify-self: center;
   align-self: center;
-  padding: 10px;
-  box-sizing: border-box;
-  background: #f7f9fc;
+  padding: 1px;
+  /* box-sizing: border-box; */
+  /* background: #f7f9fc; */
   border: none;
-  border-radius: 12px;
-  box-shadow: 0 0 0 1px #d4deef;
+  /* border-radius: 12px; */
+  /* box-shadow: 0 0 0 1px #d4deef; */
   display: block;
 }
 
@@ -615,13 +624,13 @@ footer {
   border-radius: 0;
   padding: 18px 20px;
   box-shadow: none; /* square edges, no soft rounding */
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
 .collage-text h1 {
   margin: 2px 0 8px 0;
-  font-size: 32px;
+  font-size: 26px;
   color: #1f2114;
 }
 
@@ -717,7 +726,7 @@ footer {
   }
 
   .site-header a {
-    font-size: 20px;
+    font-size: 16px;
     padding: 6px 0;
   }
 
@@ -737,18 +746,18 @@ footer {
 }
 
 .publications-section h1 {
-  font-size: 32px;
+  font-size: 26px;
   margin-bottom: 12px;
 }
 
 .publications-note {
-  font-size: 18px;
+  font-size: 14px;
   margin-bottom: 24px;
 }
 
 /* Contain legacy HTML */
 #publications-list {
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -837,13 +846,13 @@ footer {
 
 .news-section h1 {
   margin: 0 0 12px 0;
-  font-size: 32px;
+  font-size: 26px;
   color: #0f1b2b;
 }
 
 .news-intro {
   margin: 0 0 20px 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #1f2d3f;
 }
 
@@ -866,7 +875,7 @@ footer {
 
 .news-date {
   margin: 0;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   color: #1f4f87;
   letter-spacing: 0.02em;
@@ -874,13 +883,13 @@ footer {
 
 .news-card h2 {
   margin: 0;
-  font-size: 22px;
+  font-size: 18px;
   color: #0f1b2b;
 }
 
 .news-body {
   margin: 0;
-  font-size: 17px;
+  font-size: 14px;
   color: #1f2d3f;
   line-height: 1.6;
 }
@@ -892,6 +901,7 @@ footer {
   color: #1f4f87;
   text-decoration: none;
   border-bottom: 1px solid transparent;
+  font-size: 14px;
 }
 
 .news-link:hover {
