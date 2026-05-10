@@ -6,6 +6,15 @@
     <title>Publications</title>
 
     <link rel="stylesheet" href="assets/styles.css" />
+
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"]]
+        }
+      };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   </head>
 
   <body>
@@ -58,6 +67,16 @@
           pieces.reverse().forEach(node => {
             target.appendChild(node.cloneNode(true));
           });
+          const typesetPublications = (attempts = 20) => {
+            if (window.MathJax && MathJax.startup && MathJax.startup.promise) {
+              MathJax.startup.promise.then(() => MathJax.typesetPromise([target]));
+            } else if (window.MathJax && MathJax.typesetPromise) {
+              MathJax.typesetPromise([target]);
+            } else if (attempts > 0) {
+              window.setTimeout(() => typesetPublications(attempts - 1), 100);
+            }
+          };
+          typesetPublications();
         });
     </script>
   </body>
