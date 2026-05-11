@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Publications</title>
 
     <link rel="stylesheet" href="assets/styles.css?v=2026-05-11-publications-layout" />
@@ -58,7 +61,7 @@
 
       const publicationsVersion = "2026-05-11-publications-layout";
 
-      fetch(`publications-legacy.html?v=${publicationsVersion}`)
+      fetch(`publications-legacy.html?v=${publicationsVersion}`, { cache: "no-cache" })
         .then(r => r.text())
         .then(html => {
           const temp = document.createElement("div");
