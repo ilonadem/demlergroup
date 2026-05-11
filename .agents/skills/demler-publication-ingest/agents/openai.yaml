@@ -1,0 +1,7 @@
+interface:
+  display_name: "Demler Publication Ingest"
+  short_description: "Update publications from Dropbox and BibTeX"
+  default_prompt: "Use $demler-publication-ingest to ingest this Dropbox PDF link and BibTeX entry into the Demler group publications page."
+
+policy:
+  allow_implicit_invocation: true
