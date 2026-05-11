@@ -56,7 +56,9 @@
           });
         });
 
-      fetch("publications-legacy.html")
+      const publicationsVersion = "2026-05-11-publications-layout";
+
+      fetch(`publications-legacy.html?v=${publicationsVersion}`)
         .then(r => r.text())
         .then(html => {
           const temp = document.createElement("div");

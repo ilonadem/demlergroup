@@ -781,6 +781,57 @@ footer {
   text-decoration: underline;
 }
 
+#publications-list .publication-entry {
+  margin-bottom: 12px;
+}
+
+.publication-title {
+  color: #0f1b2b;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.publication-authors {
+  margin-top: 3px;
+  color: #425776;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.publication-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-top: 7px;
+}
+
+#publications-list .publication-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+#publications-list .publication-badge:hover {
+  text-decoration: none;
+  filter: brightness(0.95);
+}
+
+.publication-badge--arxiv {
+  background: #b31b1b;
+}
+
+.publication-badge--pdf {
+  background: #0061ff;
+}
+
 /* CV-specific styles */
 #cv-container {
   max-width: 900px;
