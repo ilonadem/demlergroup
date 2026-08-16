@@ -958,3 +958,129 @@ footer {
 .news-link:hover {
   border-bottom-color: #1f4f87;
 }
+
+/* Group Varia photo galleries */
+.varia-gallery {
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+.varia-gallery h2 {
+  margin: 0 0 12px;
+  color: #0f1b2b;
+  font-size: 22px;
+}
+
+.varia-carousel {
+  position: relative;
+}
+
+.varia-carousel-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  border: 1px solid #d4deef;
+  border-radius: 10px;
+  background: #f7f9fc;
+  box-shadow: 0 4px 10px rgba(17, 56, 112, 0.06);
+}
+
+.varia-carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.varia-carousel-slide {
+  scroll-snap-align: start;
+  margin: 0;
+  text-align: center;
+}
+
+.varia-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: min(68vh, 620px);
+  padding: 10px;
+  box-sizing: border-box;
+  object-fit: contain;
+}
+
+.varia-carousel-slide figcaption {
+  padding: 10px 14px;
+  border-top: 1px solid #d4deef;
+  background: #ffffff;
+  color: #425776;
+  font-size: 14px;
+}
+
+.varia-carousel-button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 50%;
+  background: rgba(15, 27, 43, 0.82);
+  color: #ffffff;
+  font: inherit;
+  font-size: 32px;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.varia-carousel-button:hover,
+.varia-carousel-button:focus-visible {
+  background: #1f4f87;
+}
+
+.varia-carousel-button--previous {
+  left: 14px;
+}
+
+.varia-carousel-button--next {
+  right: 14px;
+}
+
+.varia-carousel-status {
+  margin: 8px 0 0;
+  color: #425776;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .varia-gallery {
+    margin-bottom: 32px;
+  }
+
+  .varia-carousel-slide img {
+    height: min(56vh, 480px);
+    padding: 6px;
+  }
+
+  .varia-carousel-button {
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .varia-carousel-button--previous {
+    left: 8px;
+  }
+
+  .varia-carousel-button--next {
+    right: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .varia-carousel-track {
+    scroll-behavior: auto;
+  }
+}

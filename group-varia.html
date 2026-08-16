@@ -6,7 +6,7 @@
     <title>Home</title>
 
     <!-- Global styles -->
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css?v=20260816" />
   </head>
 
   <body>
@@ -16,6 +16,53 @@
     <main>
       <section class="people-section">
         <h1>Group Varia</h1>
+
+        <section class="varia-gallery" aria-labelledby="aaron-gallery-title">
+          <h2 id="aaron-gallery-title">Aaron Müller's Defence Day</h2>
+          <div class="varia-carousel" data-carousel>
+            <button class="varia-carousel-button varia-carousel-button--previous" type="button" aria-label="Previous Aaron photo" data-carousel-previous>‹</button>
+            <div class="varia-carousel-track" tabindex="0" aria-label="Aaron photo gallery" data-carousel-track>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/aaron_eugene.webp" alt="Aaron and Eugene at the celebration" width="1200" height="1600" loading="lazy" />
+                <figcaption></figcaption>
+              </figure>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/aaron_eugene_2.webp" alt="Eugene presenting a gift to Aaron" width="1200" height="1600" loading="lazy" />
+                <figcaption></figcaption>
+              </figure>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/aaron_card.webp" alt="Illustrated card made for Aaron" width="1122" height="1402" loading="lazy" />
+                <figcaption>A commemorative graduation card from the group</figcaption>
+              </figure>
+            </div>
+            <button class="varia-carousel-button varia-carousel-button--next" type="button" aria-label="Next Aaron photo" data-carousel-next>›</button>
+            <p class="varia-carousel-status" aria-live="polite"><span data-carousel-current>1</span> / 3</p>
+          </div>
+        </section>
+
+        <section class="varia-gallery" aria-labelledby="alex-gallery-title">
+          <h2 id="alex-gallery-title">Alex</h2>
+          <div class="varia-carousel" data-carousel>
+            <button class="varia-carousel-button varia-carousel-button--previous" type="button" aria-label="Previous Alex photo" data-carousel-previous>‹</button>
+            <div class="varia-carousel-track" tabindex="0" aria-label="Alex photo gallery" data-carousel-track>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/alex_defence.webp" alt="Alex presenting during his defence" width="1800" height="1350" loading="lazy" />
+                <figcaption></figcaption>
+              </figure>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/alex_apero_1.webp" alt="Colleagues gathered for Alex's apéro" width="1800" height="1350" loading="lazy" />
+                <figcaption></figcaption>
+              </figure>
+              <figure class="varia-carousel-slide">
+                <img src="assets/images/group-varia/alex_card.webp" alt="Illustrated card made for Alex" width="1800" height="2400" loading="lazy" />
+                <figcaption>A commemorative graduation card from the group</figcaption>
+              </figure>
+            </div>
+            <button class="varia-carousel-button varia-carousel-button--next" type="button" aria-label="Next Alex photo" data-carousel-next>›</button>
+            <p class="varia-carousel-status" aria-live="polite"><span data-carousel-current>1</span> / 3</p>
+          </div>
+        </section>        
+
         <figure style="max-width: 900px; margin: 0 auto 40px; text-align: center;">
           <img src="assets/images/group-varia/demler_munich_symposium_srgb.webp" alt="A one-day symposium with our collaborators" loading="lazy" style="width: 80%; height: auto; border-radius: 10px; background: #f7f9fc; box-shadow: 0 0 0 1px #d4deef; padding: 10px; box-sizing: border-box;" />
           <figcaption style="margin-top: 10px; font-size: 14px; color: #425776;">We had a one-day symposium with our theory and experiment collaborators from München, sharing the most recent ideas with each other! July 31, 2026.</figcaption>
@@ -53,6 +100,55 @@
             }
           });
         });
+
+      document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+        const track = carousel.querySelector("[data-carousel-track]");
+        const slides = Array.from(track.querySelectorAll(".varia-carousel-slide"));
+        const currentSlide = carousel.querySelector("[data-carousel-current]");
+        let currentIndex = 0;
+        let scrollFrame;
+
+        const updateStatus = (index) => {
+          currentIndex = index;
+          currentSlide.textContent = String(index + 1);
+        };
+
+        const showSlide = (index) => {
+          const wrappedIndex = (index + slides.length) % slides.length;
+          track.scrollTo({
+            left: slides[wrappedIndex].offsetLeft,
+            behavior: "smooth",
+          });
+          updateStatus(wrappedIndex);
+        };
+
+        carousel.querySelector("[data-carousel-previous]").addEventListener("click", () => {
+          showSlide(currentIndex - 1);
+        });
+
+        carousel.querySelector("[data-carousel-next]").addEventListener("click", () => {
+          showSlide(currentIndex + 1);
+        });
+
+        track.addEventListener("keydown", (event) => {
+          if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+            event.preventDefault();
+            showSlide(currentIndex + (event.key === "ArrowLeft" ? -1 : 1));
+          }
+        });
+
+        track.addEventListener("scroll", () => {
+          window.cancelAnimationFrame(scrollFrame);
+          scrollFrame = window.requestAnimationFrame(() => {
+            const nearestIndex = slides.reduce((bestIndex, slide, index) => {
+              const bestDistance = Math.abs(slides[bestIndex].offsetLeft - track.scrollLeft);
+              const currentDistance = Math.abs(slide.offsetLeft - track.scrollLeft);
+              return currentDistance < bestDistance ? index : bestIndex;
+            }, 0);
+            updateStatus(nearestIndex);
+          });
+        });
+      });
     </script>
   </body>
 </html>
