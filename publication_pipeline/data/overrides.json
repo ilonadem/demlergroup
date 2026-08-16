@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "records": {
+    "ref1": {
+      "title": "Thermoelectric effect in hollow superconductor in external magnetic field",
+      "citation": "Bulletin of the Lebedev Physics Institute 3: 38 (1995)"
+    },
+    "ref2": {
+      "title": "Thermoelectric effect in hollow superconducting elliptical cylinder",
+      "citation": "Superconductivity: Physics, Chemistry, Technology 8, No 2 (1995)"
+    },
+    "ref3": {
+      "doi": "10.1103/physrevlett.75.4126",
+      "webpage_url": "https://doi.org/10.1103/physrevlett.75.4126"
+    },
+    "ref4": {
+      "title": "A class of collective excitations of the Hubbard model: η excitation of the negative-U model",
+      "doi": "10.1142/s0217979296000982",
+      "arxiv_id": "cond-mat/9512009",
+      "first_preprint_date": "1995-12",
+      "sort_date_source": "arxiv_identifier",
+      "webpage_url": "https://doi.org/10.1142/s0217979296000982"
+    },
+    "ref11": {
+      "title": "Experimental tests of the SO(5) theory of high temperature superconductivity",
+      "citation": "J. Phys. Chem. Solids 59:1794 (1998)"
+    },
+    "ref71": {
+      "file": {
+        "filename": "ref71a.pdf"
+      }
+    },
+    "ref74": {
+      "file": {
+        "filename": "ref74a.pdf"
+      }
+    },
+    "ref81": {
+      "title": "Spectroscopy of Collective Excitations in Interacting Low-Dimensional Many-Body Systems Using Quench Dynamics"
+    },
+    "ref93": {
+      "title": "Probing quantum and thermal noise in an interacting many-body system"
+    },
+    "ref94": {
+      "title": "Relaxation after a tight squeeze",
+      "doi": "10.1038/449296a",
+      "webpage_url": "https://doi.org/10.1038/449296a"
+    },
+    "ref103": {
+      "title": "Magnetoroton Softening in Rb Spinor Condensates with Dipolar Interactions"
+    },
+    "ref135": {
+      "title": "Fermionic transport and out-of-equilibrium dynamics in a homogeneous Hubbard model with ultracold atoms"
+    },
+    "ref149": {
+      "title": "Observation of topologically protected bound states in photonic quantum walks"
+    },
+    "ref162": {
+      "doi": "10.1126/science.1224953",
+      "webpage_url": "https://doi.org/10.1126/science.1224953"
+    },
+    "ref231": {
+      "title": "Bloch state tomography using Wilson lines",
+      "doi": "10.1126/science.aad5812",
+      "webpage_url": "https://doi.org/10.1126/science.aad5812"
+    },
+    "ref247": {
+      "title": "Auxiliary fermion approach to the resonant inelastic x-ray scattering response in an underdoped cuprate"
+    },
+    "ref353": {
+      "doi": "10.1016/j.aop.2021.168651",
+      "webpage_url": "https://doi.org/10.1016/j.aop.2021.168651"
+    },
+    "ref354": {
+      "doi": "10.1038/s41567-022-01561-8",
+      "webpage_url": "https://doi.org/10.1038/s41567-022-01561-8"
+    },
+    "ref24": {
+      "arxiv_id": "cond-mat/0106645",
+      "first_preprint_date": "2001-06-29",
+      "sort_date_source": "arxiv",
+      "webpage_url": "https://arxiv.org/abs/cond-mat/0106645",
+      "provenance": {
+        "arxiv_id": "manual_verification",
+        "first_preprint_date": "manual_verification"
+      }
+    },
+    "ref403": {
+      "doi": "10.1126/science.adp2397",
+      "webpage_url": "https://doi.org/10.1126/science.adp2397"
+    },
+    "ref421": {
+      "doi": "10.1038/s41567-026-03287-3",
+      "webpage_url": "https://doi.org/10.1038/s41567-026-03287-3"
+    },
+    "ref426": {
+      "doi": "10.1038/s41567-026-03230-6",
+      "webpage_url": "https://doi.org/10.1038/s41567-026-03230-6"
+    },
+    "ref404": {
+      "title": "Nanoscale diamond quantum sensors for many-body physics"
+    },
+    "ref415": {
+      "title": "Superconductivity in substitutional Ga-hyperdoped Ge epitaxial thin films"
+    },
+    "ref434": {
+      "arxiv_id": "2510.05088",
+      "first_preprint_date": "2025-10-06",
+      "sort_date_source": "arxiv",
+      "provenance": {
+        "arxiv_id": "arxiv_exact_title",
+        "first_preprint_date": "arxiv_exact_title"
+      }
+    },
+    "ref418": {
+      "review_status": "accepted",
+      "issues": []
+    }
+  }
+}

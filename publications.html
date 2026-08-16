@@ -3,86 +3,50 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <title>Publications</title>
-
-    <link rel="stylesheet" href="assets/styles.css?v=2026-05-11-publications-layout" />
-
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="assets/publications.css" />
     <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [["\\(", "\\)"]]
-        }
-      };
+      window.MathJax = { tex: { inlineMath: [["\\(", "\\)"]] } };
     </script>
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
   </head>
-
   <body>
     <div id="site-header"></div>
-
     <main>
-      <section class="publications-section">
+      <section class="experimental-publications-section">
         <h1>Publications</h1>
-
-        <p class="publications-note">
+        <p class="experimental-publications-note">
           For a complete and up-to-date list, see the
-          <a href="https://scholar.google.com/citations?user=0qjME1gAAAAJ" target="_blank">
+          <a href="https://scholar.google.com/citations?user=0qjME1gAAAAJ" target="_blank" rel="noopener">
             Google Scholar
           </a>.
         </p>
-
-        <!-- Legacy publication list gets injected here -->
-        <div id="publications-list"></div>
+        <div id="experimental-publications-list" aria-live="polite"></div>
       </section>
     </main>
-
     <footer>© 2025 Demler group; original design by I. Demler</footer>
-
     <script>
-      fetch("header.html")
-        .then((r) => r.text())
-        .then((html) => {
-          const h = document.getElementById("site-header");
-          h.innerHTML = html;
-
-          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
-          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
-          h.querySelectorAll("a").forEach((a) => {
-            const href = a.getAttribute("href") || "";
-            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
-            if (linkPage === currentPage) {
-              a.classList.add("active");
-            }
-          });
+      Promise.all([
+        fetch("header.html").then((response) => response.text()),
+        fetch("publications_list.html", { cache: "no-cache" }).then((response) => response.text())
+      ]).then(([headerHtml, publicationsHtml]) => {
+        const header = document.getElementById("site-header");
+        const publicationsList = document.getElementById("experimental-publications-list");
+        header.innerHTML = headerHtml;
+        publicationsList.innerHTML = publicationsHtml;
+        header.querySelectorAll("a").forEach((link) => {
+          if ((link.getAttribute("href") || "").includes("publications")) {
+            link.classList.add("active");
+          }
         });
-
-      const publicationsVersion = "2026-05-11-ref445";
-
-      fetch(`publications-legacy.html?v=${publicationsVersion}`, { cache: "no-cache" })
-        .then(r => r.text())
-        .then(html => {
-          const temp = document.createElement("div");
-          temp.innerHTML = html;
-          const pieces = Array.from(temp.querySelectorAll("li, hr"));
-          const target = document.getElementById("publications-list");
-          target.innerHTML = "";
-          pieces.reverse().forEach(node => {
-            target.appendChild(node.cloneNode(true));
-          });
-          const typesetPublications = (attempts = 20) => {
-            if (window.MathJax && MathJax.startup && MathJax.startup.promise) {
-              MathJax.startup.promise.then(() => MathJax.typesetPromise([target]));
-            } else if (window.MathJax && MathJax.typesetPromise) {
-              MathJax.typesetPromise([target]);
-            } else if (attempts > 0) {
-              window.setTimeout(() => typesetPublications(attempts - 1), 100);
-            }
-          };
-          typesetPublications();
-        });
+        if (window.MathJax && MathJax.typesetPromise) {
+          MathJax.typesetPromise([publicationsList]);
+        }
+      }).catch((error) => {
+        document.getElementById("experimental-publications-list").textContent =
+          `Unable to load publications: ${error.message}`;
+      });
     </script>
   </body>
 </html>
