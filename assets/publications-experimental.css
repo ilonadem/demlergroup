@@ -38,35 +38,55 @@
 }
 
 .publication-year-list {
-  display: grid;
-  gap: 16px;
+  display: block;
 }
 
 .experimental-publication {
-  padding: 18px 20px;
-  background: #fff;
-  border: 1px solid #d4deef;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(17, 56, 112, 0.07);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "title title"
+    "authors authors"
+    "citation controls"
+    "doi controls";
+  column-gap: 16px;
+  padding: 12px 0 14px;
+  border-bottom: 1px solid #d4deef;
+}
+
+.experimental-publication:first-child {
+  padding-top: 0;
 }
 
 .experimental-publication-title {
+  grid-area: title;
   font-size: 20px;
-  line-height: 1.35;
+  line-height: 1.3;
   color: #0f1b2b;
 }
 
 .experimental-publication-authors {
-  margin-top: 7px;
-  color: #34475c;
+  grid-area: authors;
+  margin-top: 2px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: #425776;
 }
 
 .experimental-publication-citation,
 .experimental-publication-doi {
-  margin-top: 5px;
-  font-size: 16px;
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 1.35;
   overflow-wrap: anywhere;
+}
+
+.experimental-publication-citation {
+  grid-area: citation;
+  margin-top: 4px;
+}
+
+.experimental-publication-doi {
+  grid-area: doi;
 }
 
 .experimental-publication-doi a {
@@ -74,10 +94,12 @@
 }
 
 .experimental-publication-controls {
+  grid-area: controls;
   display: flex;
   flex-wrap: wrap;
+  align-self: center;
+  justify-self: end;
   gap: 9px;
-  margin-top: 13px;
 }
 
 .publication-control {
@@ -124,10 +146,22 @@
   }
 
   .experimental-publication {
-    padding: 15px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "authors"
+      "citation"
+      "doi"
+      "controls";
+    padding: 11px 0 13px;
   }
 
   .experimental-publication-title {
     font-size: 18px;
+  }
+
+  .experimental-publication-controls {
+    justify-self: start;
+    margin-top: 7px;
   }
 }
