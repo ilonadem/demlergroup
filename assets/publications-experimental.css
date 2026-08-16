@@ -1,0 +1,133 @@
+.experimental-publications-section {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.experimental-publications-section h1 {
+  margin-top: 0;
+}
+
+.experimental-publications-note {
+  color: #526275;
+  margin-bottom: 28px;
+}
+
+.experimental-draft-banner {
+  padding: 12px 16px;
+  margin: 0 0 18px;
+  color: #633c00;
+  background: #fff3d8;
+  border: 1px solid #e6c36c;
+  border-radius: 8px;
+}
+
+.publication-year {
+  margin-bottom: 44px;
+}
+
+.publication-year-title {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0 0 14px;
+  padding: 8px 0;
+  font-size: 28px;
+  color: #0d3f6d;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 2px solid #d4deef;
+}
+
+.publication-year-list {
+  display: grid;
+  gap: 16px;
+}
+
+.experimental-publication {
+  padding: 18px 20px;
+  background: #fff;
+  border: 1px solid #d4deef;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(17, 56, 112, 0.07);
+}
+
+.experimental-publication-title {
+  font-size: 20px;
+  line-height: 1.35;
+  color: #0f1b2b;
+}
+
+.experimental-publication-authors {
+  margin-top: 7px;
+  color: #34475c;
+}
+
+.experimental-publication-citation,
+.experimental-publication-doi {
+  margin-top: 5px;
+  font-size: 16px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.experimental-publication-doi a {
+  color: #1f4f87;
+}
+
+.experimental-publication-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.publication-control {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 5px 13px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border-radius: 999px;
+}
+
+.publication-control--file {
+  color: #fff;
+  background: #0d3f6d;
+}
+
+.publication-control--webpage {
+  color: #0d3f6d;
+  background: #e5edfa;
+  border: 1px solid #b7c9e5;
+}
+
+.publication-control--missing {
+  color: #6f7883;
+  background: #eef1f4;
+  border: 1px solid #d5dbe1;
+  cursor: not-allowed;
+}
+
+.publication-review-note {
+  margin-top: 12px;
+  padding-top: 9px;
+  font-size: 14px;
+  color: #8a4d00;
+  border-top: 1px dashed #e1bf7b;
+}
+
+@media (max-width: 720px) {
+  .publication-year-title {
+    position: static;
+  }
+
+  .experimental-publication {
+    padding: 15px;
+  }
+
+  .experimental-publication-title {
+    font-size: 18px;
+  }
+}
