@@ -11,3 +11,10 @@ publications_experimental.html
 publications_experimental_list.html
 publications_experimental.bib
 assets/publications-experimental.css
+
+# Local publication-maintenance infrastructure. Keep the usage notes only.
+publication_pipeline/*
+!publication_pipeline/README.md
+.agents/ONBOARDING.md
+.agents/skills/demler-publication-ingest/
+publications.bib
