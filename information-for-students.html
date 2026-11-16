@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Information for Students</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div id="site-header"></div>
+    <main>
+      <h1>Information for Students</h1>
+
+      <section class="people-section">
+        <h2>Information for prospective Master’s students</h2>
+        <p>
+          If you are interested in joining our group for a research project, please note our academic prerequisites.
+          Incoming students are expected to have a strong foundation in many-body condensed matter physics, comparable
+          to the advanced Solid State Physics course taught by Professor Demler
+          (<a href="assets/lecture-notes/solid-state-physics-sample-syllabus.pdf" target="_blank" rel="noopener">sample syllabus</a>).
+          A working knowledge of advanced quantum mechanics, statistical mechanics, and classical electrodynamics is
+          required, and familiarity with field theory methods in many-body physics is a strong plus. For ETH students,
+          we highly encourage taking at least one advanced course with Professor Demler prior to applying. Relevant
+          classes include Statistical Mechanics, Solid State Physics, Advanced Methods in Quantum Many-Body Theory,
+          and Strongly Correlated Systems in Atomic and Condensed Matter Physics.
+        </p>
+      </section>
+
+      <section class="people-section">
+        <h2>Information for prospective PhD students</h2>
+        <p>
+          The availability of PhD positions in our group depends on current funding. Incoming students are expected
+          to have a strong foundation in many-body condensed matter physics, comparable to the advanced Solid State
+          Physics course taught by Professor Demler
+          (<a href="assets/lecture-notes/solid-state-physics-sample-syllabus.pdf" target="_blank" rel="noopener">sample syllabus</a>).
+          A working knowledge of advanced quantum mechanics, statistical mechanics, classical electrodynamics, and
+          field theory methods in many-body physics is required. If you are interested in pursuing a PhD with us,
+          please email Professor Demler directly. Your application should include the following:
+        </p>
+        <ul>
+          <li>A statement of purpose detailing your research interests, experience, and goals</li>
+          <li>A resume or CV</li>
+          <li>A list of publications (if applicable)</li>
+          <li>Official transcripts from all undergraduate and graduate institutions attended</li>
+        </ul>
+        <p>
+          Please be prepared to provide three letters of recommendation upon request, preferably from professors who
+          have supervised your previous research projects.
+        </p>
+      </section>
+    </main>
+
+    <footer>© 2025–2026 Demler group; original design by I. Demler</footer>
+
+    <script>
+      fetch("header.html", { cache: "no-cache" })
+        .then((response) => response.text())
+        .then((html) => {
+          const headerContainer = document.getElementById("site-header");
+          headerContainer.innerHTML = html;
+
+          const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+          const currentPage = currentPath === "/" ? "index.html" : currentPath.split("/").pop();
+          const links = headerContainer.querySelectorAll("a");
+
+          links.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const linkPage = href === "/" ? "index.html" : href.replace(/^\//, "");
+            if (linkPage === currentPage) {
+              link.classList.add("active");
+            }
+          });
+        });
+    </script>
+  </body>
+</html>

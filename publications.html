@@ -25,10 +25,10 @@
         <div id="experimental-publications-list" aria-live="polite"></div>
       </section>
     </main>
-    <footer>© 2025 Demler group; original design by I. Demler</footer>
+    <footer>© 2025–2026 Demler group; original design by I. Demler</footer>
     <script>
       Promise.all([
-        fetch("header.html").then((response) => response.text()),
+        fetch("header.html", { cache: "no-cache" }).then((response) => response.text()),
         fetch("publications_list.html", { cache: "no-cache" }).then((response) => response.text())
       ]).then(([headerHtml, publicationsHtml]) => {
         const header = document.getElementById("site-header");
